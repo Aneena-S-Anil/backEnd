@@ -6,7 +6,7 @@ const pool = new Pool
     password:"root",
     host:"localhost",
     port:5432,
-    database:"radical_work"
+    database:"radical_work_management"
 });
 
 module.exports = pool;

@@ -12,7 +12,7 @@ router.get("/employeeInfo/:id", async (req, res) => {
       "SELECT (role,email,first_name,last_name,gender,dob,age,blood_group,marital_status,guardian_name,ph_no,user_status) FROM employee_info WHERE emp_id = $1 ",
       [req.params.id]
     );
-    // console.log(user);
+    console.log(user);
 
     res.status(200).json({
       status: "success",

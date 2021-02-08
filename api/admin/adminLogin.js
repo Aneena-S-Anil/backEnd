@@ -20,7 +20,7 @@ router.post("/login", async (req, res) =>
           [email]
       );
 
-      if ((user.rows.length === 0) ||  (user.rows[0].role != "admin") ) 
+      if ((user.rows.length === 0) || (user.rows[0].role != "admin") ) 
       {
           return res.status(401).send("Invalid user");
       }

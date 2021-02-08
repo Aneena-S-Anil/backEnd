@@ -21,7 +21,6 @@ router.put("/rejectLeaveRequest/:id",authorize, async (req, res) => {
   console.log(req.params.id);
  
 });
-
 module.exports = router;
 
  
