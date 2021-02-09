@@ -6,13 +6,13 @@ const app = express();
 const pool = require("./config/db");
 const cors = require("cors");
 
- const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5001;
 
 
 app.use(cors());
 app.use(express.json());
 
-// ADMIN ADD 
+// ADMIN ADD EMPLOYEE
 app.use("/admin/add", require("./api/admin/addAddress"));
 app.use("/admin/add", require("./api/admin/addJobInfo"));
 app.use("/admin/add", require("./api/admin/addEmployee"));
@@ -31,14 +31,6 @@ app.use("/admin/manage", require("./api/admin/approveLeaveRequest"));
 
 //ADMIN ACTIVATE EMPLOYEE
 app.use("/admin/activate", require("./api/admin/activateEmployee"));
-  
-//ADMIN UPDATE 
-app.use("/admin/update", require("./api/admin/updateEmployeeInfo"));
-
-//ADMIN UPLOAD
-app.use("/admin/upload", require("./api/admin/profilePic"));
-app.use("/admin/upload", require("./api/admin/accountDetails"));
-app.use("/admin/upload", require("./api/admin/idProof"));
 
 // ADMIN RESET PASSWORD
 // app.use("/admin/reset", require("./api/admin/resetPassword"));
@@ -48,7 +40,7 @@ app.use("/employee/add", require("./api/employee/addLeaveRequest"));
 app.use("/employee/manage", require("./api/employee/modifyLeaveRequest"));
 
 // EMPLOYEE LOGIN
-app.use("/employee", require("./api/employee/employeeLogin")); 
+app.use("/employee", require("./api/employee/employeeLogin"));
 
 // EMPLOYEE VIEW
 app.use("/employee/view", require("./api/employee/viewProfile"));
